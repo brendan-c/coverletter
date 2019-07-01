@@ -1,0 +1,163 @@
+button,
+input,
+label,
+select,
+textarea {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  display: inline-block;
+  vertical-align: middle;
+  white-space: normal;
+  background: 0 0;
+  line-height: 1;
+  font-size: 13px;
+  font-family: Arial
+}
+
+input:focus {
+  outline: 0
+}
+
+input,
+textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box
+}
+
+button,
+input[type=button],
+input[type=checkbox],
+input[type=radio],
+input[type=reset],
+input[type=submit],
+select {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+input[type=checkbox],
+input[type=radio] {
+  width: 13px;
+  height: 13px
+}
+
+input[type=search] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box
+}
+
+::-webkit-search-decoration {
+  display: none
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  overflow: visible;
+  width: auto
+}
+
+::-webkit-file-upload-button {
+  padding: 0;
+  border: 0;
+  background: 0 0
+}
+
+textarea {
+  vertical-align: top;
+  overflow: auto
+}
+
+select[multiple] {
+  vertical-align: top
+}
+
+body {
+  font-family: Helvetica, Arial, Sans-Serif;
+   !important font-size: 1rem;
+  line-height: 1.3;
+}
+input{
+  width:44%;
+}
+
+span {
+  background: #f8efff;
+}
+
+#app {
+  max-width: 1100px;
+  margin: 1% auto 1% auto;
+}
+
+h5 {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+input,
+button {
+  border: solid 1px #d7d3d3;
+  padding: 6px;
+  border-radius: 2px;
+  margin-top: 12px;
+}
+
+button:active {
+  border-color: #b48bed;
+  box-shadow: 0px 0px 1px #b6a9c9;
+}
+
+input:hover,
+button:hover {
+  border-color: #c6a7f2;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+input:focus {
+  border-color: #b48bed;
+  box-shadow: 0px 0px 1px #b6a9c9;
+}
+
+.set {
+  margin-top: 35px;
+}
+
+.set input {
+  margin-left: 5px;
+}
+
+input.third {
+  width: 30%;
+}
+
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+#inputs {
+  max-width: 35%;
+  min-width: 400px;
+  float: left;
+}
+
+#letter {
+  max-width: 61%;
+  min-width: 400px;
+  margin-left:4%;
+  display: inline-block;
+}
+
+#letter p {
+  margin-top: 2px;
+  padding: 2px;
+}

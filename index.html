@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <title>CV</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+
+  <body>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <div id="app">
+      <div id="inputs">
+        <h1>
+          Step 1
+        </h1>
+        <h3>
+          Fill in the forms:
+        </h3>
+
+        <div class="set">
+          <h5>Your Information</h5>
+          <input type="text" v-model="yourName" placeholder="full name">
+          <input type="text" v-model="yourNumber" placeholder="(000) 000 - 0000">
+          <input type="text" v-model="myAddr_street" placeholder="123 example st">
+          <input type="text" v-model="myAddr_city" placeholder="city, state">
+          <input type="text" v-model="jobField" placeholder="career field">
+          <input type="text" v-model="resumeItem1" placeholder="experience item">
+          <input type="text" v-model="resumeItem2" placeholder="hard skill">
+          <input type="text" v-model="resumeItem3" placeholder="hard skill">
+          <input type="text" v-model="softSkill" placeholder="soft skill">
+        </div>
+        <div class="set">
+          <h5>Date</h5>
+          <input type="text" v-model="date_current" placeholder="day, month, year">
+        </div>
+        <div class="set">
+          <h5>Company Information</h5>
+          <input type="text" v-model="companyName" placeholder="company name">
+          <input type="text" v-model="companyAddr_street" placeholder="123 example st">
+          <input type="text" v-model="companyAddr_city" placeholder="city, state">
+          <input type="text" v-model="companyValue1" placeholder="company value">
+          <input type="text" v-model="companyValue2" placeholder="company value">
+          <input type="text" v-model="companyValue3" placeholder="company value">
+        </div>
+        <div class="set">
+          <h5>Job Posting Information</h5>
+          <input type="text" v-model="posterTitle" placeholder="Job Poster Job Title">
+          <input type="text" v-model="jobPosting_site" placeholder="Indeed">
+          <input type="text" v-model="jobPosting_date" placeholder="Posting date(month day)">
+          <input type="text" v-model="jobPosting_position" placeholder="advertised position">
+        </div>
+      </div>
+      <div id="letter">
+        <h1>
+          Step 2
+        </h1>
+        <h3>
+          Edit as needed:
+        </h3>
+
+        <div id="exportContent">
+          <div class="info">
+            <p><span class="myAddr_street">{{ yourName }}</span>
+              <br/>
+              <span class="myAddr_street">{{ myAddr_street }}</span>
+              <br/>
+              <span class="myAddr_city">{{myAddr_city}}</span>
+              <br/><br/>
+              <span class="date_current">{{date_current}}</span>
+              <br/><br/>
+              <span class="posterTitle">{{posterTitle}}</span>
+              <br/>
+              <span class="companyName">{{companyName}}</span>
+              <br/>
+              <span class="companyAddr_street">{{companyAddr_street}}</span>
+              <br/>
+              <span class="companyAddr_city">{{companyAddr_city}}</span>
+            </p>
+          </div>
+          <br/><br/>
+          <div class="main">
+            <p class="greeting">Dear <span class="posterTitle" contenteditable="false">{{posterTitle}}</span>,</p>
+            <br/>
+            <p class="intro" contenteditable="true">I am drawn to <span contenteditable="false">{{companyName}}</span> because of my interest in <span contenteditable="false">{{jobField}}</span> and the opportunity to use my skill sets in a more specialized career. I am applying to your ad
+              posted on <span contenteditable="false">{{jobPosting_site}}</span> on <span contenteditable="false">{{jobPosting_date}}</span> for your <span contenteditable="false">{{jobPosting_position}}</span> position.</p>
+            <p class="body" contenteditable="true">Through my research of your company, I have found that <span contenteditable="false">{{companyName}}</span> places high importance on <span contenteditable="false">{{companyValue1}}</span>, <span contenteditable="false">{{companyValue2}}</span>,
+              and <span contenteditable="false">{{companyValue3}}</span>. These values align with what I strive to provide as an <span contenteditable="false">{{jobPosting_position}}</span> as well as an individual. As you will see from my resume, I have
+              past experience in <span contenteditable="false">{{resumeItem1}}</span>, where I have gained adept <span contenteditable="false">{{resumeItem2}}</span> skills. Along with this, I have a wide range of knowledge in <span contenteditable="false">{{jobField}}</span>,
+              specifically with <span contenteditable="false">{{resumeItem3}}</span>. Utilizing a <span contenteditable="false">{{softSkill}}</span> approach, I am confident I would be a valuable addition to <span contenteditable="false">{{companyName}}</span>.</p>
+            <p class="conclusion" contenteditable="true">I look forward to speaking with you at your earliest convenience. Thank you for your time and consideration.</p>
+            <br/>
+            <p class="ending">Sincerely,
+              <br/><br/><br/>
+              <span contenteditable="false" class="name">{{yourName}}</span>
+              <br/><br/>
+              <span contenteditable="false" class="number">{{yourNumber}}</span>
+            </p>
+          </div>
+        </div>
+        <br/><br/>
+        <button class="btn" data-clipboard-target="#exportContent">Copy letter</button>
+        <button onclick="Export2Doc('exportContent');">Export as .doc</button>
+      </div>
+    </div>
+    <script src="/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+    <script>
+      var clipboard = new ClipboardJS('.btn');
+      clipboard.on('success', function(e) {
+        console.log(e);
+      });
+      clipboard.on('error', function(e) {
+        console.log(e);
+      });
+    </script>
+  </body>
+
+</html>
